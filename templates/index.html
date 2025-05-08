@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparativa de Bibliotecas de Visualización</title>
+    <!-- Plotly JS -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Bokeh CSS y JS (generado dinámicamente) -->
+    {{ bokeh_resources|safe }}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #444;
+            margin-top: 40px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        .chart-container {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background-color: white;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #f2f2f2;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparativa de Bibliotecas de Visualización en Python</h1>
+        
+        <p>Esta página muestra la misma visualización de datos utilizando diferentes bibliotecas de Python, todas integradas en una aplicación Flask. Los mismos datos (una serie simple de 5 puntos) se utilizan en cada caso para facilitar la comparación.</p>
+        
+        <!-- Sección Matplotlib -->
+        <h2>1. Matplotlib</h2>
+        <div class="chart-container">
+            <img src="{{ matplotlib_url }}" alt="Gráfico de Matplotlib" style="max-width: 100%;">
+        </div>
+        
+        <!-- Sección Plotly -->
+        <h2>2. Plotly</h2>
+        <div class="chart-container">
+            <div id="plotly-graph" style="height: 400px;"></div>
+        </div>
+        
+        <!-- Sección Bokeh -->
+        <h2>3. Bokeh</h2>
+        <div class="chart-container">
+            {{ bokeh_div|safe }}
+        </div>
+        
+        <!-- Tabla comparativa -->
+        <h2>Comparativa de las bibliotecas</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Matplotlib</th>
+                    <th>Plotly</th>
+                    <th>Bokeh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tipo</td>
+                    <td>Biblioteca estática</td>
+                    <td>Biblioteca interactiva</td>
+                    <td>Biblioteca interactiva</td>
+                </tr>
+                <tr>
+                    <td>Interactividad</td>
+                    <td>Limitada</td>
+                    <td>Alta</td>
+                    <td>Alta</td>
+                </tr>
+                <tr>
+                    <td>Integración con Flask</td>
+                    <td>Requiere convertir a imagen</td>
+                    <td>Sencilla, vía JSON</td>
+                    <td>Sencilla, vía componentes</td>
+                </tr>
+                <tr>
+                    <td>Personalización</td>
+                    <td>Muy alta</td>
+                    <td>Alta</td>
+                    <td>Alta</td>
+                </tr>
+                <tr>
+                    <td>Curva de aprendizaje</td>
+                    <td>Moderada</td>
+                    <td>Baja-Moderada</td>
+                    <td>Moderada</td>
+                </tr>
+                <tr>
+                    <td>Despliegue web</td>
+                    <td>Más complejo</td>
+                    <td>Sencillo</td>
+                    <td>Sencillo</td>
+                </tr>
+                <tr>
+                    <td>Rendimiento</td>
+                    <td>Rápido para imágenes estáticas</td>
+                    <td>Bueno para gráficos interactivos</td>
+                    <td>Bueno para gráficos interactivos</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Conclusiones</h2>
+        <ul>
+            <li><strong>Matplotlib:</strong> Ideal para visualizaciones científicas precisas y gráficos estáticos que se pueden personalizar en detalle.</li>
+            <li><strong>Plotly:</strong> Excelente equilibrio entre facilidad de uso e interactividad, perfecta para aplicaciones web que requieren gráficos interactivos.</li>
+            <li><strong>Bokeh:</strong> Buena alternativa a Plotly con un enfoque específico en visualizaciones interactivas para la web.</li>
+        </ul>
+        
+        <div style="margin-top: 40px; text-align: center; padding: 15px; border-top: 1px solid #ddd;">
+            <p>Proyecto de visualización - Generado con Python</p>
+        </div>
+    </div>
+    
+    <!-- Bokeh Script -->
+    {{ bokeh_script|safe }}
+    
+    <!-- Plotly Script -->
+    <script>
+        var plotly_data = {{ plotly_json|safe }};
+        Plotly.newPlot('plotly-graph', plotly_data.data, plotly_data.layout);
+    </script>
+</body>
+</html>
