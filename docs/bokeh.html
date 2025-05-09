@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bokeh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 40px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bokeh</h1>
+        <div>
+    <h2>¿Qué es?</h2>
+    <p>Librería de gráficos interactivos pensada para la web.</p>
+    <p>Ideal para integrar visualizaciones en dashboards HTML.</p>
+
+    <h2>¿Cómo funciona?</h2>
+    <p>En Python se define una figura <code>figure()</code>, se agregan glyphs como <code>line</code>, <code>circle</code>, etc.</p>
+    <p>Bokeh genera automáticamente HTML + JS.</p>
+    <p>Se inserta en páginas HTML con <code>&lt;div&gt;</code> y <code>&lt;script&gt;</code>.</p>
+
+    <h2>Fortalezas</h2>
+    <ul>
+        <li>Muy buena integración con Flask, Django, etc.</li>
+        <li>Altamente personalizable.</li>
+        <li>Interactividad en tiempo real si se conecta con <code>bokeh server</code>.</li>
+    </ul>
+
+    <h2>Limitaciones</h2>
+    <ul>
+        <li>La sintaxis puede ser más verbosa.</li>
+        <li>No tiene tantos tipos de gráficos como Plotly.</li>
+    </ul>
+
+    <h2>¿Con qué tipo de gráficos puedo trabajar?</h2>
+    <p>Bokeh es interactiva como Plotly, pero está más orientada a visualización web y streaming de datos.</p>
+
+    <ul>
+        <li>Líneas (<code>line</code>)</li>
+        <li>Dispersión (<code>circle</code>, <code>scatter</code>)</li>
+        <li>Barras (<code>vbar</code>, <code>hbar</code>)</li>
+        <li>Histogramas (combinando <code>quad</code>)</li>
+        <li>Boxplot (con <code>Whisker</code>, <code>BoxAnnotation</code>)</li>
+        <li>Gráficos de áreas</li>
+        <li>Gráficos con sliders y widgets</li>
+        <li>Gráficos con zoom, pan, hover</li>
+        <li>Subplots y layouts</li>
+        <li>Mapas (con <code>tile_sources</code> o integración con <code>GeoJSONDataSource</code>)</li>
+        <li>Streaming plots (para datos en tiempo real)</li>
+    </ul>
+    </div>
+        <a href="/">← Volver a la página principal</a>
+    </div>
+</body>
+</html>
