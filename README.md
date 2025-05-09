@@ -12,6 +12,7 @@ La aplicación muestra el mismo conjunto de datos visualizado con tres bibliotec
 ## Visualización online
 
 Puedes ver la aplicación funcionando en: [https://lucianoespejo42.github.io/Comparacion-Visualizacion-Python/](https://lucianoespejo42.github.io/Comparacion-Visualizacion-Python/)
+Para ver más información sobre la biblioteca Matplotlib haga click en el siguiente enlace: [https://lucianoespejo42.github.io/Comparacion-Visualizacion-Python/matplotlib]([https://lucianoespejo42.github.io/Comparacion-Visualizacion-Python/](https://lucianoespejo42.github.io/Comparacion-bibliotecas/matplotlib.html))
 
 ## Instrucciones para desarrollo local
 
