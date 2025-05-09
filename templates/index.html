@@ -64,20 +64,20 @@
         <p>Esta página muestra la misma visualización de datos utilizando diferentes bibliotecas de Python, todas integradas en una aplicación Flask. Los mismos datos (una serie simple de 5 puntos) se utilizan en cada caso para facilitar la comparación.</p>
         
         <!-- Sección Matplotlib -->
-        <h2><a href="matplotlib.html">1. Matplotlib</a></h2>
+        <h2><a href="{{ url_for('info_matplotlib') }}">1. Matplotlib</a></h2>
 
         <div class="chart-container">
             <img src="{{ matplotlib_url }}" alt="Gráfico de Matplotlib" style="max-width: 100%;">
         </div>
         
         <!-- Sección Plotly -->
-        <h2><a href="plotly.html">2. Plotly</a></h2>
+        <h2><a href="{{ url_for('info_plotly') }}">2. Plotly</a></h2>
         <div class="chart-container">
             <div id="plotly-graph" style="height: 400px;"></div>
         </div>
         
         <!-- Sección Bokeh -->
-        <h2><a href="bokeh.html">3. Bokeh</a></h2>
+        <h2><a href="{{ url_for('info_bokeh') }}">3. Bokeh</a></h2>
         <div class="chart-container">
             {{ bokeh_div|safe }}
         </div>
